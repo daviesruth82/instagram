@@ -1,0 +1,70 @@
+.Side-container {
+  width: 100%;
+  min-width: 0;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Side-holder {
+  width: 90%;
+  height: 90%;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.user-section {
+  width: 100%;
+  height: 10%;
+  /* background-color: rgb(231, 226, 226); */
+  display: flex;
+  justify-content: space-between;
+}
+.holders {
+  display: flex;
+  gap: 10px;
+}
+.action {
+  color: blue;
+}
+.profiles {
+  font-size: 50px;
+}
+.account-section {
+  width: 100%;
+  height: 50%;
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.account-holder {
+  display: flex;
+  justify-content: space-between;
+}
+.accounts {
+  display: flex;
+  justify-content: space-between;
+}
+footer {
+  width: 100%;
+  height: 30%;
+  /* background-color: rgb(231, 226, 226); */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: rgb(116, 112, 112);
+}
+ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+a {
+  text-decoration: none;
+  color: rgb(117, 112, 112);
+}

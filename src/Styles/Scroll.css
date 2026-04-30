@@ -1,0 +1,69 @@
+.Scroll-container {
+  width: 100%;
+
+  height: 100vh;
+  min-height: max-content;
+  /* background-color: goldenrod; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  /* position: relative; */
+}
+.Scroll-holder {
+  width: 95%;
+  max-width: 600px;
+  min-height: max-content;
+  /* background-color: aliceblue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Card-con {
+  width: 80%;
+  min-height: max-content;
+  /* background-color: rgb(167, 142, 191); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.card {
+  width: 80%;
+  height: 95%;
+  /* background-color: rgb(243, 239, 239); */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* position: absolute; */
+  /* left: 0; */
+
+  /* justify-content: space-evenly; */
+  gap: 20px;
+}
+.profile {
+  width: 100%;
+  height: 7%;
+  display: flex;
+  gap: 10px;
+  /* background-color: yellow; */
+  justify-content: space-between;
+}
+.verify {
+  color: rgb(4, 125, 255);
+}
+.profiles {
+  font-size: 30px;
+}
+.images {
+  width: 100%;
+
+  /* background-color: aqua; */
+}
+.images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

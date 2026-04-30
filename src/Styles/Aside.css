@@ -1,0 +1,62 @@
+.Aside-Container {
+  width: 100%;
+  height: 100vh;
+  /* background-color: whitesmoke; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Aside-holder {
+  width: 98%;
+  height: 95%;
+
+  /* background-color: pink; */
+}
+.Aside-icons {
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+  /* background-color: rgb(17, 170, 101); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.Aside-icons p {
+  display: none;
+}
+
+.Aside-icons:hover p {
+  display: block;
+}
+
+.icon2 {
+  width: 95%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+.icon3 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.holder {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+
+  &:hover {
+    background-color: rgb(234, 230, 230);
+    padding-left: 10px;
+    border-radius: 10px;
+  }
+}
+.icons {
+  font-size: 25px;
+}
