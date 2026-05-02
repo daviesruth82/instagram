@@ -1,0 +1,93 @@
+.create-container {
+    width:100%;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.createSection {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  
+}
+.topBar {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.action {
+  color: #3897f0;
+  font-weight: 500;
+}
+
+.textSmall {
+  font-size: 14px;
+}
+
+.textMuted {
+  font-size: 14px;
+  color: #888;
+}
+
+.previewWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.previewBox {
+  width: 280px;
+  height: 280px;
+  background: #ccc;
+  border-radius: 6px;
+}
+
+.gallerySection {
+  padding: 8px;
+}
+
+.galleryHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.gridItem {
+  height: 90px;
+  background: #ccc;
+}
+.captionSection {
+  padding: 8px;
+}
+
+.captionInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.previewImage {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+}

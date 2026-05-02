@@ -45,8 +45,7 @@ const ScrollChild = () => {
       time: new Date().toLocaleTimeString(),
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdnpZ-AGP11TQgiPZJSnPt-eWbxfbGVinTNA&s",
-      caption:
-        "Speaking for Women's Art in “Portrait of a Lady on Fire",
+      caption: "Speaking for Women's Art in “Portrait of a Lady on Fire",
     },
     {
       id: 6,
@@ -56,12 +55,21 @@ const ScrollChild = () => {
         "https://www.bellanaija.com/wp-content/uploads/2021/07/Linda-Osifo-2.jpg",
       caption: "BLACK IS BEAUTIFUL",
     },
+    {
+      id: 7,
+      name: "Astrid Astrid",
+      time: new Date().toLocaleTimeString(),
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXKkWDe6XhWaWbCK4P8ARGEFnoAX2eoy4iCQ&s",
+      caption:
+        "First Lady Celebrates African Women and Girls - Voice of Nigeria Broadcasting Service",
+    },
   ];
 
 
 
   return (
-    <>
+    <>            
       {data.map((item) => (
         <div className="Card-con" key={item.id}>
           <article className="card">
@@ -83,13 +91,15 @@ const ScrollChild = () => {
             </article>
 
             <section
-              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+              style={{display: "flex", flexDirection: "column", gap: "10px" }}
             >
+
               <div className="caption-con">
                 <p>{item.name}</p>
                 <MdVerified className="verify" />
               </div>
               <p>{item.caption}</p>
+              
             </section>
           </article>
         </div>
