@@ -1,75 +1,49 @@
 import React from "react";
 import "../Styles/SideBar.css";
-import { CgProfile } from "react-icons/cg";
 
 const SideBar = () => {
+  const username = localStorage.getItem("username") || "Davies";
+
+  
+  const profile = username.charAt(0).toUpperCase();
+
   return (
     <div className="Side-container">
       <div className="Side-holder">
+        
         <section className="user-section">
           <div className="holders">
-            <CgProfile className="profiles" />
-            <h3>AstridTech</h3>
+            
+            <div className="profile-circle">{profile}</div>
+
+            <h3>{username}</h3>
           </div>
+
           <div className="action">
             <p>switch</p>
           </div>
         </section>
+
+        
         <section className="account-section">
           <div className="account-holder">
             <h3>Suggested for you</h3>
             <p>See all</p>
           </div>
-          <div className="accounts">
-            <div className="holders">
-              <CgProfile className="profiles" />
-              <h3>AstridTech</h3>
-            </div>
-            <div className="action">
-              <p>Follow</p>
-            </div>
-          </div>
 
-          <div className="accounts">
-            <div className="holders">
-              <CgProfile className="profiles" />
-              <h3>AstridTech</h3>
+          {[1, 2, 3, 4, 5].map((item) => (
+            <div className="accounts" key={item}>
+              <div className="holders">
+                <div className="profile-circle">A</div>
+                <h3>AstridTech</h3>
+              </div>
+              <div className="action">
+                <p>Follow</p>
+              </div>
             </div>
-            <div className="action">
-              <p>Follow</p>
-            </div>
-          </div>
-
-          <div className="accounts">
-            <div className="holders">
-              <CgProfile className="profiles" />
-              <h3>AstridTech</h3>
-            </div>
-            <div className="action">
-              <p>Follow</p>
-            </div>
-          </div>
-
-          <div className="accounts">
-            <div className="holders">
-              <CgProfile className="profiles" />
-              <h3>AstridTech</h3>
-            </div>
-            <div className="action">
-              <p>Follow</p>
-            </div>
-          </div>
-
-          <div className="accounts">
-            <div className="holders">
-              <CgProfile className="profiles" />
-              <h3>AstridTech</h3>
-            </div>
-            <div className="action">
-              <p>Follow</p>
-            </div>
-          </div>
+          ))}
         </section>
+
         <footer>
           <ul>
             <a href="">

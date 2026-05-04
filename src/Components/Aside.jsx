@@ -11,9 +11,11 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { IoMenu } from "react-icons/io5";
 import { LiaBoxesSolid } from "react-icons/lia";
+import { useNavigate } from "react-router-dom";
 
 
 const Aside = () => {
+  const navigate = useNavigate()
   return (
     <div className="Aside-Container">
       <div className="Aside-holder">
@@ -46,7 +48,7 @@ const Aside = () => {
               <TfiHeart className="icons" />
               <p>Notifications</p>
             </div>
-            <div className="holder">
+            <div className="holder" onClick={() => navigate("/create")}>
               <AiOutlinePlus className="icons" />
               <p>Create</p>
             </div>

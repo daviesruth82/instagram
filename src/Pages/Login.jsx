@@ -1,30 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/Login.css";
 import { FaInstagram } from "react-icons/fa";
 import Button from "../Components/Button";
 import { FaMeta } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
 
+  const loginData = JSON.parse(localStorage.getItem("dataBase")) || [];
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const validate = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
-    if (username === "admin" && password === "password") {
-      alert("Login successful!");
+    if (!username || !password) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    const user = loginData.find(
+      (data) =>
+        (data.username === username || data.email === username) &&
+        data.password === password,
+    );
+
+    if (user) {
+      alert("Login successful");
       setLoading(true);
 
+      localStorage.setItem("username",user.username);
+
       setTimeout(() => {
-        setIsLoggedIn(true);
         navigate("/home");
-      }, 1000); 
+      }, 1000);
     } else {
       alert("Invalid username or password.");
     }
@@ -35,7 +47,7 @@ const Login = () => {
       {loading ? (
         <div className="welcome-message">
           <FaInstagram className="welcome-icon" />
-          <p>Loading...</p>
+          <p>Meta</p>
         </div>
       ) : (
         <>
@@ -74,6 +86,7 @@ const Login = () => {
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
                     />
+
                     <input
                       type="password"
                       placeholder="Password"
@@ -90,6 +103,7 @@ const Login = () => {
                         text="Log in"
                         className="btn"
                       />
+
                       <Button
                         text="Forgotten Password ?"
                         className="btn"
@@ -105,11 +119,13 @@ const Login = () => {
                         text="Log in with Facebook"
                         className="btn-1"
                       />
+
                       <Button
                         text="Create new account"
                         className="btn-2"
                         color="blue"
                         backgroundColor="white"
+                        onClick={() => navigate("/signup")}
                       />
                     </article>
                   </section>

@@ -1,7 +1,7 @@
 .create-container {
     width:100%;
   height: 100vh;
-  background: #fff;
+  background: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +10,7 @@
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
+  background-color: #7cafde;
   
 }
 .topBar {
@@ -18,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #1b1c1b;
 }
 
 .title {
@@ -26,7 +27,7 @@
 }
 
 .action {
-  color: #3897f0;
+  color: #047ae8;
   font-weight: 500;
 }
 
@@ -36,7 +37,7 @@
 
 .textMuted {
   font-size: 14px;
-  color: #888;
+  color: #0f0f0f;
 }
 
 .previewWrapper {
@@ -44,13 +45,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f5f5;
+  /* background: #c90d9a; */
 }
 
 .previewBox {
   width: 280px;
   height: 280px;
-  background: #ccc;
+  background: #fbfafa;
   border-radius: 6px;
 }
 

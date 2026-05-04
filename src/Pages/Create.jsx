@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import "../Styles/Create.css"
+import {data} from "../Components/Post"
+import { useNavigate } from 'react-router-dom'
 
 const Create = () => {
+  const navigate = useNavigate()
   const [images, setImages] = useState([])
   const [selectedImage, setSelectedImage] = useState(null)
   const [caption, setCaption] = useState("")
@@ -18,29 +22,42 @@ const Create = () => {
   }
 
   const handlePost = () => {
-    if (!selectedImage) {
-      alert("Select an image first")
-      return
-    }
-
-    const newPost = {
-      image: selectedImage,
-      caption: caption,
-      id: Date.now()
-    }
-
-    const existingPosts = JSON.parse(localStorage.getItem("posts")) || []
-    const updatedPosts = [newPost, ...existingPosts]
-
-    localStorage.setItem("posts", JSON.stringify(updatedPosts))
-
-    alert("Post created")
-
-    setCaption("")
-    setSelectedImage(null)
-    setImages([])
+  if (!selectedImage) {
+    alert("Select an image first");
+    return;
   }
 
+  
+  const username = localStorage.getItem("username") ;
+  if( !username) {
+    alert("User not found.");
+    navigate("/");
+    return;
+  }
+  console.log("Username:", username);
+
+  const newPost = {
+    image: selectedImage,
+    caption: caption,
+    id: Date.now(),
+    name: username,
+    time: new Date().toLocaleTimeString(),
+  };
+
+  const existingPosts = JSON.parse(localStorage.getItem("posts")) || [];
+
+  const updatedPosts = [newPost, ...existingPosts];
+
+  localStorage.setItem("posts", JSON.stringify(updatedPosts));
+
+  alert("upload successful");
+
+  setCaption("");
+  setSelectedImage(null);
+  setImages([]);
+
+  navigate("/home");
+};
   return (
     <div className="create-container">
       <section className='createSection'>
@@ -48,7 +65,7 @@ const Create = () => {
         <div className="topBar">
           <span className="textSmall">Cancel</span>
           <h2 className="title">New Post</h2>
-          <span className="action" onClick={handlePost}>
+          <span className="action" onClick={handlePost} >
             Post
           </span>
         </div>
@@ -59,7 +76,9 @@ const Create = () => {
             <img src={selectedImage} alt="preview" className="previewImage" />
           ) : (
             <div className="previewBox">No Image</div>
-          )}
+
+          )
+          }
         </div>
 
         
